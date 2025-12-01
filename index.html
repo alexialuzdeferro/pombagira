@@ -9,7 +9,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fontes Google: Adicionada 'Cinzel' para o Latim -->
+    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
                     fontFamily: {
                         sans: ['Lato', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
-                        latin: ['Cinzel', 'serif'], /* Fonte nova para o Latim */
+                        latin: ['Cinzel', 'serif'],
                     },
                     colors: {
                         pomba: {
@@ -35,6 +35,7 @@
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -59,7 +60,6 @@
         }
         .accordion-content.active { opacity: 1; }
 
-        /* Estilo para os detalhes das Pombagiras (Details/Summary) */
         details > summary {
             list-style: none;
             outline: none;
@@ -67,7 +67,6 @@
         details > summary::-webkit-details-marker {
             display: none;
         }
-        /* Animação suave ao abrir os detalhes */
         details[open] summary ~ * {
             animation: sweep .4s ease-in-out;
         }
@@ -121,13 +120,25 @@
         /* Hover Glow */
         [data-theme="pombagira"] .btn-link { border: 1px solid #8a0a0a; box-shadow: 0 0 10px rgba(138, 10, 10, 0.3); }
         [data-theme="pombagira"] .btn-link:hover { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); border-color: #d4af37; }
+
+        /* Estilo do Quiz */
+        .quiz-btn {
+            background: linear-gradient(45deg, #450a0a, #7f1d1d);
+            border: 1px solid #fde047;
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(253, 224, 71, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0); }
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen font-sans" data-theme="pombagira">
 
     <div class="bg-pattern transition-all duration-700"></div>
 
-    <main class="relative max-w-lg mx-auto min-h-screen flex flex-col items-center px-4 py-8 md:py-12">
+    <main class="relative max-w-lg mx-auto min-h-screen flex flex-col items-center px-4 py-8 md:py-12 pb-20">
         
         <!-- Theme Switcher -->
         <div class="glass-panel w-full rounded-full p-2 mb-8 flex justify-between items-center max-w-[200px] border border-[var(--border-color)]">
@@ -141,16 +152,15 @@
             <div class="relative inline-block mb-4">
                 <div class="absolute -inset-1 bg-gradient-to-tr from-[var(--text-accent)] to-[var(--text-main)] rounded-full blur opacity-75 animate-pulse"></div>
                 
-                <!-- ÁREA DA FOTO DE PERFIL (Atualizada com GitHub Raw Link) -->
+                <!-- ÁREA DA FOTO DE PERFIL -->
                 <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[var(--card-bg)] shadow-2xl bg-black/40">
                     <img src="https://raw.githubusercontent.com/alexialuzdeferro/bio-almas-de-pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
                          alt="Alexia Luz de Ferro" 
                          class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
                 </div>
 
-                <!-- ÍCONE DO TRIDENTE REFEITO (Mais Ornamentado) -->
+                <!-- ÍCONE DO TRIDENTE -->
                 <div class="absolute bottom-0 right-0 bg-[var(--card-bg)] p-2 rounded-full border border-[var(--text-accent)] shadow-lg" title="Laroyê">
-                    <!-- Tridente Imperial SVG -->
                     <svg width="28" height="28" viewBox="0 0 100 100" fill="var(--text-accent)">
                         <path d="M50 10 C 48 10 46 12 46 14 L 46 65 C 30 55 20 40 20 25 C 20 20 15 20 15 25 C 15 50 35 70 46 75 L 46 90 C 46 95 54 95 54 90 L 54 75 C 65 70 85 50 85 25 C 85 20 80 20 80 25 C 80 40 70 55 54 65 L 54 14 C 54 12 52 10 50 10 Z M 35 25 L 35 35 L 65 35 L 65 25 M 50 10 L 50 35" stroke="var(--text-accent)" stroke-width="2" />
                     </svg>
@@ -160,7 +170,6 @@
             <h1 class="font-serif text-4xl font-bold mb-2 text-[var(--text-main)] tracking-wide drop-shadow-md">
                 Almas de Pombagira
             </h1>
-            <!-- Frase em Latim (Fonte Cinzel) -->
             <p class="text-[var(--text-accent)] text-lg font-latin font-bold tracking-widest uppercase mb-4 opacity-90 drop-shadow-sm">
                 Lux in Tenebris • Vis Aeterna
             </p>
@@ -170,11 +179,23 @@
         <!-- Links Container -->
         <div class="w-full space-y-4 relative z-10">
 
+            <!-- 0. QUIZZ EM DESTAQUE (NOVO) -->
+            <a href="https://alexialuzdeferro.github.io/Quizz--Pombagiras-/" target="_blank" class="block rounded-xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300 quiz-btn group relative">
+                <div class="absolute inset-0 bg-yellow-500/10 animate-pulse-fast"></div>
+                <div class="px-6 py-5 flex items-center justify-between relative z-10">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-[var(--text-main)] text-xl tracking-wide drop-shadow-md">QUER SABER QUAL SUA POMBAGIRA?</span>
+                        <span class="text-xs text-[var(--text-main)] uppercase tracking-wider opacity-80">Faça o teste agora</span>
+                    </div>
+                    <span class="text-3xl animate-bounce">🔮</span>
+                </div>
+            </a>
+
             <!-- 1. QUEM SOU -->
             <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link group" id="container-about">
                 <button onclick="toggleMainAccordion('about')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
                     <span class="flex items-center gap-3">
-                        <span class="text-2xl">🔮</span>
+                        <span class="text-2xl">⚡</span>
                         <span class="font-bold text-[var(--text-main)] text-lg">Quem Sou</span>
                     </span>
                     <svg id="arrow-about" class="w-5 h-5 text-[var(--text-accent)] transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
@@ -199,7 +220,7 @@
                 </div>
             </div>
 
-            <!-- 2. AS POMBAGIRAS (Lista Interativa Inteligente) -->
+            <!-- 2. AS POMBAGIRAS -->
             <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link" id="container-pombagiras">
                 <button onclick="toggleMainAccordion('pombagiras')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
                     <span class="flex items-center gap-3">
@@ -211,10 +232,8 @@
                 <div id="content-pombagiras" class="accordion-content bg-[var(--card-bg)]">
                     <div class="px-2 py-2 border-t border-[var(--border-color)]">
                         
-                        <!-- Lista de Pombagiras (Expansível - Um fecha o outro) -->
                         <div class="space-y-1" id="pombagiras-list">
-                            
-                            <!-- Maria Padilha -->
+                            <!-- LISTA DE POMBAGIRAS -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Maria Padilha <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Comando & Realeza</span></span>
@@ -225,7 +244,6 @@
                                 </div>
                             </details>
 
-                            <!-- Maria Mulambo -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Maria Mulambo <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Cura & Humildade</span></span>
@@ -236,7 +254,6 @@
                                 </div>
                             </details>
 
-                            <!-- Maria Quitéria -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Maria Quitéria <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Guerra & Proteção</span></span>
@@ -247,7 +264,6 @@
                                 </div>
                             </details>
 
-                            <!-- Rosa Caveira -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Rosa Caveira <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Justiça & Morte</span></span>
@@ -258,7 +274,6 @@
                                 </div>
                             </details>
 
-                            <!-- Dama da Noite -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Dama da Noite <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Mistério & Oculto</span></span>
@@ -269,7 +284,6 @@
                                 </div>
                             </details>
 
-                            <!-- Sete Saias -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Sete Saias <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Alegria & Intensidade</span></span>
@@ -280,7 +294,6 @@
                                 </div>
                             </details>
 
-                            <!-- Cigana -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Pombagira Cigana <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Liberdade & Prosperidade</span></span>
@@ -291,7 +304,6 @@
                                 </div>
                             </details>
 
-                            <!-- Maria Navalha -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Maria Navalha <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Malandragem & Rua</span></span>
@@ -302,7 +314,6 @@
                                 </div>
                             </details>
 
-                            <!-- Pombagira da Praia -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Pombagira da Praia <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Emoção & Limpeza</span></span>
@@ -313,7 +324,6 @@
                                 </div>
                             </details>
 
-                            <!-- Maria Farrapo -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Maria Farrapo <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Sanidade & Caos</span></span>
@@ -324,7 +334,6 @@
                                 </div>
                             </details>
 
-                            <!-- Menina -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Pombagira Menina <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Renovação & Inocência</span></span>
@@ -335,7 +344,6 @@
                                 </div>
                             </details>
 
-                            <!-- Figueira -->
                             <details class="group p-3 cursor-pointer">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Pombagira da Figueira <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Raiz & Ancestralidade</span></span>
@@ -358,12 +366,9 @@
                 <span class="h-px w-16 bg-[var(--text-accent)]"></span>
             </div>
 
-            <!-- 3. LINKS DE TRABALHO (Cards com Imagem) -->
-            
-            <!-- Link 1: Bio.site -->
+            <!-- LINKS DE TRABALHO -->
             <a href="https://bio.site/AlmasdePombagira" target="_blank" class="block glass-panel rounded-xl border border-[var(--border-color)] btn-link hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-20 overflow-hidden bg-[var(--btn-bg)]">
-                    <!-- Placeholder Imagem Esquerda -->
                     <div class="w-20 h-full bg-gray-900 flex-shrink-0">
                         <img src="https://placehold.co/100x100/330000/FFF?text=Bio" alt="Bio Site" class="w-full h-full object-cover">
                     </div>
@@ -375,10 +380,8 @@
                 </div>
             </a>
 
-            <!-- Link 2: Linktree -->
             <a href="https://linktr.ee/alexiarosadefogo" target="_blank" class="block glass-panel rounded-xl border border-[var(--border-color)] btn-link hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-20 overflow-hidden bg-[var(--btn-bg)]">
-                    <!-- Placeholder Imagem Esquerda -->
                     <div class="w-20 h-full bg-gray-900 flex-shrink-0">
                         <img src="https://placehold.co/100x100/330000/FFF?text=Tree" alt="Linktree" class="w-full h-full object-cover">
                     </div>
@@ -390,10 +393,8 @@
                 </div>
             </a>
 
-            <!-- Link 3: Canva -->
             <a href="https://pombagiras.my.canva.site/" target="_blank" class="block glass-panel rounded-xl border border-[var(--border-color)] btn-link hover:scale-[1.02] transition-transform">
                 <div class="flex items-center h-20 overflow-hidden bg-[var(--btn-bg)]">
-                    <!-- Placeholder Imagem Esquerda -->
                     <div class="w-20 h-full bg-gray-900 flex-shrink-0">
                         <img src="https://placehold.co/100x100/330000/FFF?text=Site" alt="Canva Site" class="w-full h-full object-cover">
                     </div>
@@ -405,25 +406,22 @@
                 </div>
             </a>
 
-            <!-- 4. COMUNIDADE (WhatsApp, Telegram, Discord) -->
+            <!-- COMUNIDADE -->
             <div class="glass-panel rounded-xl border border-[var(--border-color)] p-4 bg-[var(--btn-bg)]">
                 <p class="text-center text-[var(--text-main)] text-sm font-bold mb-3 uppercase tracking-wider">Acessar Canais Agora</p>
                 <div class="grid grid-cols-3 gap-3">
-                    <!-- WhatsApp -->
                     <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded hover:bg-white/10 transition group">
                         <div class="w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center border border-green-700 text-green-500 group-hover:scale-110 transition">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.967.592 1.971.913 3.022.914 3.179 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.994-5.771zm3.392 8.244c-.144.405-1.004 1.353-1.388 1.45-.333.084-3.342-.777-5.06-2.529-1.503-1.534-2.181-3.665-2.228-4.07-.047-.404.185-.929.803-1.282.167-.096.284-.111.411-.08.196.048 1.258.604 1.341.675.084.072.167.239.117.477-.049.238-.309.643-.451.81-.167.19-.345.202-.559.107-1.118-.476-1.785-1.121-2.274-1.896-.154-.237.051-.318.428-.67.119-.111.231-.226.329-.405.099-.178.049-.333-.024-.476-.073-.143-.642-1.536-.856-2.072-.202-.511-.403-.439-.558-.451-.143-.012-.309-.012-.475-.012-.166 0-.44.06-.666.309-.226.25-1.071 1.06-1.071 2.584 0 1.524.964 2.871 1.238 3.276.273.405 2.19 3.262 5.178 4.571 2.179.941 2.62.774 3.096.726.476-.048 1.297-.536 1.476-1.048.178-.512.178-.953.131-1.048z"/></svg>
                         </div>
                         <span class="text-xs text-[var(--text-main)]">WhatsApp</span>
                     </a>
-                    <!-- Telegram -->
                     <a href="https://t.me/pomba_giras" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded hover:bg-white/10 transition group">
                         <div class="w-10 h-10 rounded-full bg-blue-900/40 flex items-center justify-center border border-blue-700 text-blue-400 group-hover:scale-110 transition">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.4-1.08.4-.35 0-1.03-.2-1.54-.35-.62-.18-1.12-.29-1.08-.63.02-.16.24-.32.65-.49 2.54-1.1 4.23-1.84 5.08-2.2 2.41-1.04 2.92-1.22 3.25-1.22.07 0 .23.01.33.08.09.07.12.17.13.24 0 .1 0 .22-.01.3z"/></svg>
                         </div>
                         <span class="text-xs text-[var(--text-main)]">Telegram</span>
                     </a>
-                    <!-- Discord -->
                     <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded hover:bg-white/10 transition group">
                         <div class="w-10 h-10 rounded-full bg-indigo-900/40 flex items-center justify-center border border-indigo-700 text-indigo-400 group-hover:scale-110 transition">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.946 2.419-2.157 2.419z"/></svg>
@@ -433,7 +431,7 @@
                 </div>
             </div>
 
-            <!-- YouTube DESTAQUE -->
+            <!-- YouTube -->
             <a href="https://www.youtube.com/@almasdepombagira" target="_blank" class="block glass-panel rounded-xl border border-red-800 btn-link transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
                 <div class="absolute inset-0 bg-red-900/20 group-hover:bg-red-800/30 transition"></div>
                 <div class="px-6 py-5 flex items-center justify-between relative z-10">
@@ -445,33 +443,27 @@
                 </div>
             </a>
 
-            <!-- Grid de Redes Sociais (2x2) -->
+            <!-- Redes Sociais Grid -->
             <div class="grid grid-cols-2 gap-3">
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/almasdepombagira/?igsh=Y3VocnA2aDQxYjlw" target="_blank" class="glass-panel p-4 rounded-xl border border-[var(--border-color)] flex items-center gap-3 hover:bg-[var(--btn-hover)] transition-colors btn-link">
                     <div class="text-2xl text-pink-600">📷</div>
                     <span class="text-[var(--text-main)] font-semibold text-sm">Instagram</span>
                 </a>
-                <!-- TikTok 1 -->
                 <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR" target="_blank" class="glass-panel p-4 rounded-xl border border-[var(--border-color)] flex items-center gap-3 hover:bg-[var(--btn-hover)] transition-colors btn-link">
                     <div class="text-2xl text-white drop-shadow-md">🎵</div>
                     <span class="text-[var(--text-main)] font-semibold text-sm">TikTok</span>
                 </a>
-                <!-- Threads -->
                 <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="glass-panel p-4 rounded-xl border border-[var(--border-color)] flex items-center gap-3 hover:bg-[var(--btn-hover)] transition-colors btn-link">
                     <div class="text-2xl text-[var(--text-main)]">@</div>
                     <span class="text-[var(--text-main)] font-semibold text-sm">Threads</span>
                 </a>
-                <!-- Pinterest -->
                 <a href="https://br.pinterest.com/almasdepombagira/" target="_blank" class="glass-panel p-4 rounded-xl border border-[var(--border-color)] flex items-center gap-3 hover:bg-[var(--btn-hover)] transition-colors btn-link">
                     <div class="text-2xl text-red-600">📌</div>
                     <span class="text-[var(--text-main)] font-semibold text-sm">Pinterest</span>
                 </a>
             </div>
 
-            <!-- Botões Finais (Kwai e TikTok Extra) -->
             <div class="space-y-3 pt-2">
-                <!-- Kwai -->
                 <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="block glass-panel rounded-xl border border-[var(--border-color)] p-3 flex items-center justify-between btn-link bg-[var(--btn-bg)]">
                     <span class="flex items-center gap-3">
                         <span class="text-2xl text-orange-500">🟧</span>
@@ -480,7 +472,6 @@
                     <span class="text-[var(--text-accent)]">➜</span>
                 </a>
 
-                <!-- TikTok Extra - Destaque -->
                 <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR" target="_blank" class="block glass-panel rounded-xl border border-[var(--text-accent)] p-4 flex items-center justify-center btn-link bg-gradient-to-r from-black/50 to-[var(--pomba-red)]/20 relative overflow-hidden">
                     <div class="relative z-10 flex items-center gap-2">
                         <span class="text-2xl animate-pulse">✨</span>
@@ -492,7 +483,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt-12 text-center relative z-10 pb-8">
+        <footer class="mt-12 text-center relative z-10">
             <div class="flex justify-center items-center gap-4 mb-4 opacity-70">
                 <span class="h-px w-8 bg-[var(--text-accent)]"></span>
                 <span class="text-2xl animate-pulse text-[var(--text-accent)]">🔱</span>
@@ -509,29 +500,28 @@
             </p>
         </footer>
 
+        <!-- CONTADOR DISCRETO (Fixo no canto inferior direito) -->
+        <div id="visit-counter" class="fixed bottom-2 right-2 text-[var(--text-accent)] text-[10px] opacity-60 font-mono z-50 pointer-events-none bg-black/40 px-2 py-1 rounded">
+            Acessos: <span id="counter-value">...</span>
+        </div>
+
     </main>
 
     <script>
-        // Função de Troca de Tema
         function setTheme(themeName) {
             document.body.setAttribute('data-theme', themeName);
         }
 
-        // --- LÓGICA DO ACORDEÃO PRINCIPAL (Quem Sou / Pombagiras) ---
-        // Quando um abre, o outro fecha
         function toggleMainAccordion(id) {
             const currentContent = document.getElementById(`content-${id}`);
             const currentArrow = document.getElementById(`arrow-${id}`);
             const isOpening = !currentContent.style.maxHeight;
 
-            // 1. Fechar TODOS os conteúdos principais primeiro
             const allMainContents = document.querySelectorAll('.accordion-content');
-            const allArrows = document.querySelectorAll('[id^="arrow-"]'); // Seleciona todas as setas
+            const allArrows = document.querySelectorAll('[id^="arrow-"]');
 
             allMainContents.forEach(content => {
-                // Não fechar os detalhes internos (summary/details)
                 if (content.parentElement.tagName === 'DETAILS') return;
-                
                 content.style.maxHeight = null;
                 content.classList.remove('active');
             });
@@ -540,7 +530,6 @@
                 arrow.style.transform = 'rotate(0deg)';
             });
 
-            // 2. Se a intenção era abrir, abre o atual
             if (isOpening) {
                 currentContent.style.maxHeight = currentContent.scrollHeight + "px";
                 currentContent.classList.add('active');
@@ -548,15 +537,11 @@
             }
         }
 
-        // --- LÓGICA DA LISTA DE POMBAGIRAS (Details/Summary) ---
-        // Quando um <details> abre, fecha os outros dentro da mesma lista
         const pombagirasList = document.getElementById('pombagiras-list');
         const allDetails = pombagirasList.querySelectorAll('details');
 
         allDetails.forEach((targetDetail) => {
             targetDetail.addEventListener('click', () => {
-                // Se o elemento já está aberto, o clique vai fechá-lo (comportamento padrão), então não fazemos nada.
-                // Se o elemento está FECHADO, o clique vai abri-lo. Nesse momento, fechamos os outros.
                 if (!targetDetail.open) {
                     allDetails.forEach((detail) => {
                         if (detail !== targetDetail) {
@@ -567,9 +552,32 @@
             });
         });
 
-        // Efeito de carregamento inicial
-        window.addEventListener('load', () => {
+        // --- LÓGICA DO CONTADOR DE ACESSOS (SIMPLES, PERSISTENTE E OFFLINE) ---
+        document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('main').classList.add('opacity-100');
+            
+            // 1. Número base para dar autoridade (como se já tivesse muitos acessos)
+            const baseVisits = 15420; 
+
+            // 2. Recupera o número de visitas deste usuário específico
+            let userVisits = localStorage.getItem('user_visits');
+            
+            // 3. Se não existir, começa do 1. Se existir, converte para número e soma 1.
+            if (!userVisits) {
+                userVisits = 1;
+            } else {
+                userVisits = parseInt(userVisits) + 1;
+            }
+
+            // 4. Salva o novo número (persistência: não apaga quando recarrega)
+            localStorage.setItem('user_visits', userVisits);
+
+            // 5. Calcula o total exibido (Base + Visitas do usuário)
+            // Isso dá a sensação de "números reais" e crescentes.
+            const totalDisplay = baseVisits + userVisits;
+
+            // 6. Atualiza na tela
+            document.getElementById('counter-value').innerText = totalDisplay.toLocaleString('pt-BR');
         });
     </script>
 </body>
