@@ -230,7 +230,8 @@
                     <svg id="arrow-pombagiras" class="w-5 h-5 text-[var(--text-accent)] transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 <div id="content-pombagiras" class="accordion-content bg-[var(--card-bg)]">
-                    <div class="px-2 py-2 border-t border-[var(--border-color)]">
+                    <!-- ADICIONEI PB-8 (Padding Bottom) AQUI PARA GARANTIR ESPAÇO EXTRA NO FINAL -->
+                    <div class="px-2 py-2 border-t border-[var(--border-color)] pb-8">
                         
                         <div class="space-y-1" id="pombagiras-list">
                             <!-- LISTA DE POMBAGIRAS -->
@@ -344,7 +345,8 @@
                                 </div>
                             </details>
 
-                            <details class="group p-3 cursor-pointer">
+                            <!-- Pombagira da Figueira -->
+                            <details class="group p-3 cursor-pointer" id="last-pombagira">
                                 <summary class="flex justify-between items-center font-bold text-[var(--text-accent)]">
                                     <span>Pombagira da Figueira <span class="text-[var(--text-main)] text-xs opacity-70 block sm:inline font-normal">| Raiz & Ancestralidade</span></span>
                                     <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
@@ -541,7 +543,8 @@
         const allDetails = pombagirasList.querySelectorAll('details');
 
         allDetails.forEach((targetDetail) => {
-            targetDetail.addEventListener('click', () => {
+            targetDetail.addEventListener('click', (e) => {
+                // Se o elemento não está aberto (vai abrir)
                 if (!targetDetail.open) {
                     allDetails.forEach((detail) => {
                         if (detail !== targetDetail) {
@@ -549,6 +552,16 @@
                         }
                     });
                 }
+                
+                // CORREÇÃO CRÍTICA: RECALCULAR A ALTURA DO PAI
+                setTimeout(() => {
+                     const parentContent = document.getElementById('content-pombagiras');
+                     if (parentContent && parentContent.classList.contains('active')) {
+                         // Aumenta a altura máxima para acomodar o novo conteúdo expandido
+                         // Adicionamos +50px de segurança
+                         parentContent.style.maxHeight = (parentContent.scrollHeight + 100) + "px";
+                     }
+                }, 50); // Pequeno delay para esperar a renderização do browser
             });
         });
 
