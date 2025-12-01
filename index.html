@@ -9,10 +9,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fontes Google -->
+    <!-- Fontes Google: Adicionada 'Cinzel' para o Latim -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
     <!-- Configuração do Tailwind -->
     <script>
@@ -23,6 +23,7 @@
                     fontFamily: {
                         sans: ['Lato', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                        latin: ['Cinzel', 'serif'], /* Fonte nova para o Latim */
                     },
                     colors: {
                         pomba: {
@@ -61,15 +62,17 @@
         /* Estilo para os detalhes das Pombagiras (Details/Summary) */
         details > summary {
             list-style: none;
+            outline: none;
         }
         details > summary::-webkit-details-marker {
             display: none;
         }
+        /* Animação suave ao abrir os detalhes */
         details[open] summary ~ * {
-            animation: sweep .5s ease-in-out;
+            animation: sweep .4s ease-in-out;
         }
         @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
+            0%    {opacity: 0; transform: translateY(-5px)}
             100%  {opacity: 1; transform: translateY(0)}
         }
 
@@ -118,9 +121,6 @@
         /* Hover Glow */
         [data-theme="pombagira"] .btn-link { border: 1px solid #8a0a0a; box-shadow: 0 0 10px rgba(138, 10, 10, 0.3); }
         [data-theme="pombagira"] .btn-link:hover { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); border-color: #d4af37; }
-
-        /* Utilitários de Texto */
-        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body class="antialiased min-h-screen font-sans" data-theme="pombagira">
@@ -141,14 +141,11 @@
             <div class="relative inline-block mb-4">
                 <div class="absolute -inset-1 bg-gradient-to-tr from-[var(--text-accent)] to-[var(--text-main)] rounded-full blur opacity-75 animate-pulse"></div>
                 
-                <!-- ÁREA DA FOTO DE PERFIL -->
+                <!-- ÁREA DA FOTO DE PERFIL (Atualizada com GitHub Raw Link) -->
                 <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[var(--card-bg)] shadow-2xl bg-black/40">
-                    <!-- COLOQUE O LINK DA SUA FOTO ABAIXO onde diz 'src' -->
-                    <img src="https://github.com/alexialuzdeferro/bio-almas-de-pombagira/blob/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
-                         alt="Foto de Perfil" 
-                         class="w-full h-full object-cover"
-                         onerror="this.style.display='none'"> 
-                    <!-- Se a imagem der erro, fica apenas o fundo escuro do div pai, sem texto -->
+                    <img src="https://raw.githubusercontent.com/alexialuzdeferro/bio-almas-de-pombagira/main/uma_ilustra_o_vibrante_no_estilo_retr_com%20(2).jpeg" 
+                         alt="Alexia Luz de Ferro" 
+                         class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
                 </div>
 
                 <!-- ÍCONE DO TRIDENTE REFEITO (Mais Ornamentado) -->
@@ -163,8 +160,8 @@
             <h1 class="font-serif text-4xl font-bold mb-2 text-[var(--text-main)] tracking-wide drop-shadow-md">
                 Almas de Pombagira
             </h1>
-            <!-- Frase em Latim -->
-            <p class="text-[var(--text-accent)] text-lg font-serif italic tracking-widest uppercase mb-4 opacity-90">
+            <!-- Frase em Latim (Fonte Cinzel) -->
+            <p class="text-[var(--text-accent)] text-lg font-latin font-bold tracking-widest uppercase mb-4 opacity-90 drop-shadow-sm">
                 Lux in Tenebris • Vis Aeterna
             </p>
             <div class="h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-[var(--text-accent)] to-transparent rounded opacity-70"></div>
@@ -174,8 +171,8 @@
         <div class="w-full space-y-4 relative z-10">
 
             <!-- 1. QUEM SOU -->
-            <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link group">
-                <button onclick="toggleAccordion('about')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
+            <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link group" id="container-about">
+                <button onclick="toggleMainAccordion('about')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
                     <span class="flex items-center gap-3">
                         <span class="text-2xl">🔮</span>
                         <span class="font-bold text-[var(--text-main)] text-lg">Quem Sou</span>
@@ -202,9 +199,9 @@
                 </div>
             </div>
 
-            <!-- 2. AS POMBAGIRAS (Lista Interativa) -->
-            <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link">
-                <button onclick="toggleAccordion('pombagiras')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
+            <!-- 2. AS POMBAGIRAS (Lista Interativa Inteligente) -->
+            <div class="glass-panel rounded-xl border border-[var(--border-color)] overflow-hidden btn-link" id="container-pombagiras">
+                <button onclick="toggleMainAccordion('pombagiras')" class="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] transition-colors">
                     <span class="flex items-center gap-3">
                         <span class="text-2xl">🌹</span>
                         <span class="font-bold text-[var(--text-main)] text-lg">As Pombagiras</span>
@@ -214,8 +211,8 @@
                 <div id="content-pombagiras" class="accordion-content bg-[var(--card-bg)]">
                     <div class="px-2 py-2 border-t border-[var(--border-color)]">
                         
-                        <!-- Lista de Pombagiras (Expansível) -->
-                        <div class="space-y-1">
+                        <!-- Lista de Pombagiras (Expansível - Um fecha o outro) -->
+                        <div class="space-y-1" id="pombagiras-list">
                             
                             <!-- Maria Padilha -->
                             <details class="group p-3 border-b border-[var(--border-color)]/30 cursor-pointer">
@@ -515,25 +512,62 @@
     </main>
 
     <script>
+        // Função de Troca de Tema
         function setTheme(themeName) {
             document.body.setAttribute('data-theme', themeName);
         }
 
-        function toggleAccordion(id) {
-            const content = document.getElementById(`content-${id}`);
-            const arrow = document.getElementById(`arrow-${id}`);
-            
-            if (content.style.maxHeight) {
+        // --- LÓGICA DO ACORDEÃO PRINCIPAL (Quem Sou / Pombagiras) ---
+        // Quando um abre, o outro fecha
+        function toggleMainAccordion(id) {
+            const currentContent = document.getElementById(`content-${id}`);
+            const currentArrow = document.getElementById(`arrow-${id}`);
+            const isOpening = !currentContent.style.maxHeight;
+
+            // 1. Fechar TODOS os conteúdos principais primeiro
+            const allMainContents = document.querySelectorAll('.accordion-content');
+            const allArrows = document.querySelectorAll('[id^="arrow-"]'); // Seleciona todas as setas
+
+            allMainContents.forEach(content => {
+                // Não fechar os detalhes internos (summary/details)
+                if (content.parentElement.tagName === 'DETAILS') return;
+                
                 content.style.maxHeight = null;
                 content.classList.remove('active');
+            });
+
+            allArrows.forEach(arrow => {
                 arrow.style.transform = 'rotate(0deg)';
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.classList.add('active');
-                arrow.style.transform = 'rotate(180deg)';
+            });
+
+            // 2. Se a intenção era abrir, abre o atual
+            if (isOpening) {
+                currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+                currentContent.classList.add('active');
+                currentArrow.style.transform = 'rotate(180deg)';
             }
         }
 
+        // --- LÓGICA DA LISTA DE POMBAGIRAS (Details/Summary) ---
+        // Quando um <details> abre, fecha os outros dentro da mesma lista
+        const pombagirasList = document.getElementById('pombagiras-list');
+        const allDetails = pombagirasList.querySelectorAll('details');
+
+        allDetails.forEach((targetDetail) => {
+            targetDetail.addEventListener('click', () => {
+                // Se o elemento já está aberto, o clique vai fechá-lo (comportamento padrão), então não fazemos nada.
+                // Se o elemento está FECHADO, o clique vai abri-lo. Nesse momento, fechamos os outros.
+                if (!targetDetail.open) {
+                    allDetails.forEach((detail) => {
+                        if (detail !== targetDetail) {
+                            detail.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Efeito de carregamento inicial
         window.addEventListener('load', () => {
             document.querySelector('main').classList.add('opacity-100');
         });
