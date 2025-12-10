@@ -46,11 +46,7 @@
             --text-muted: #e8d5b7;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cormorant Garamond', serif;
@@ -63,175 +59,58 @@
 
         /* Padrão de Fundo */
         body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238a0a0a' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            pointer-events: none;
-            z-index: 0;
+            opacity: 0.5; pointer-events: none; z-index: 0;
         }
 
         /* ============ EFEITOS MÍSTICOS ============ */
         .life-pulse {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vmax;
-            height: 100vmax;
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100vmax; height: 100vmax;
             background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
-            animation: lifePulse 4s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 0;
+            animation: lifePulse 4s ease-in-out infinite; pointer-events: none; z-index: 0;
         }
-
-        @keyframes lifePulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
-        }
+        @keyframes lifePulse { 0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; } 50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; } }
 
         .magic-circles {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            pointer-events: none;
-            z-index: 1;
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px;
+            pointer-events: none; z-index: 1;
         }
-
-        .magic-circle {
-            position: absolute;
-            border: 1px solid;
-            border-radius: 50%;
-            opacity: 0.12;
-        }
-
-        .magic-circle:nth-child(1) {
-            width: 100%; height: 100%; top: 0; left: 0; border-color: var(--accent-magenta); animation: rotateCircle 30s linear infinite;
-        }
-
-        .magic-circle:nth-child(2) {
-            width: 80%; height: 80%; top: 10%; left: 10%; border-color: var(--accent-red); animation: rotateCircle 25s linear infinite reverse;
-        }
-
-        .magic-circle:nth-child(3) {
-            width: 60%; height: 60%; top: 20%; left: 20%; border-color: var(--accent-gold); animation: rotateCircle 20s linear infinite;
-        }
-
-        .magic-circle:nth-child(4) {
-            width: 40%; height: 40%; top: 30%; left: 30%; border-color: #ff69b4; animation: rotateCircle 15s linear infinite reverse;
-        }
-
-        @keyframes rotateCircle {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+        .magic-circle { position: absolute; border: 1px solid; border-radius: 50%; opacity: 0.12; }
+        .magic-circle:nth-child(1) { width: 100%; height: 100%; top: 0; left: 0; border-color: var(--accent-magenta); animation: rotateCircle 30s linear infinite; }
+        .magic-circle:nth-child(2) { width: 80%; height: 80%; top: 10%; left: 10%; border-color: var(--accent-red); animation: rotateCircle 25s linear infinite reverse; }
+        .magic-circle:nth-child(3) { width: 60%; height: 60%; top: 20%; left: 20%; border-color: var(--accent-gold); animation: rotateCircle 20s linear infinite; }
+        .magic-circle:nth-child(4) { width: 40%; height: 40%; top: 30%; left: 30%; border-color: #ff69b4; animation: rotateCircle 15s linear infinite reverse; }
+        @keyframes rotateCircle { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
         /* Floating Roses */
-        .floating-roses {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden;
-        }
-
-        .rose {
-            position: absolute; font-size: 20px; opacity: 0; animation: floatRose 18s ease-in-out infinite;
-        }
-
-        @keyframes floatRose {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
+        .floating-roses { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden; }
+        .rose { position: absolute; font-size: 20px; opacity: 0; animation: floatRose 18s ease-in-out infinite; }
+        @keyframes floatRose { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.7; } 90% { opacity: 0.5; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
 
         /* Petals */
-        .petals {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden;
-        }
-
-        .petal {
-            position: absolute; width: 12px; height: 16px; background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff6b6b 100%); border-radius: 50% 0 50% 50%; opacity: 0; animation: fallPetal 15s ease-in-out infinite;
-        }
-
-        @keyframes fallPetal {
-            0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.4; }
-            100% { transform: translateY(100vh) rotate(720deg) translateX(80px); opacity: 0; }
-        }
+        .petals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden; }
+        .petal { position: absolute; width: 12px; height: 16px; background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff6b6b 100%); border-radius: 50% 0 50% 50%; opacity: 0; animation: fallPetal 15s ease-in-out infinite; }
+        @keyframes fallPetal { 0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.4; } 100% { transform: translateY(100vh) rotate(720deg) translateX(80px); opacity: 0; } }
 
         /* Mystic Sparks */
-        .mystic-sparks {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3;
-        }
-
-        .spark {
-            position: absolute; width: 3px; height: 3px; border-radius: 50%; animation: sparkle 3s ease-in-out infinite;
-        }
-
+        .mystic-sparks { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+        .spark { position: absolute; width: 3px; height: 3px; border-radius: 50%; animation: sparkle 3s ease-in-out infinite; }
         .spark.red { background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red); }
         .spark.magenta { background: var(--accent-magenta); box-shadow: 0 0 8px var(--accent-magenta); }
         .spark.gold { background: var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold); }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
+        @keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); } }
 
         /* ============ COMPONENTES ============ */
-        .glass-panel {
-            background: rgba(20, 5, 20, 0.75);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .glass-panel:hover {
-            border-color: var(--accent-gold); box-shadow: 0 0 25px rgba(220, 38, 38, 0.3);
-        }
-
-        .glow-text {
-            text-shadow: 0 0 10px var(--accent-red), 0 0 20px var(--accent-magenta), 0 0 40px rgba(220, 38, 38, 0.5);
-        }
-
-        .gold-glow {
-            text-shadow: 0 0 10px var(--accent-gold), 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .mystic-orb {
-            background: radial-gradient(circle at 30% 30%, var(--accent-red), #450a0a);
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(168, 85, 247, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.2);
-            border: 2px solid var(--accent-gold);
-            transition: all 0.4s ease;
-        }
-
-        .mystic-orb:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 35px rgba(253, 224, 71, 0.5), 0 0 50px rgba(168, 85, 247, 0.4);
-            border-color: var(--text-light);
-        }
-
-        .quiz-btn {
-            background: linear-gradient(45deg, #450a0a, #7f1d1d, #450a0a);
-            background-size: 200% 200%;
-            animation: gradientShift 3s ease infinite, pulseBorder 2s infinite;
-            border: 2px solid var(--text-light);
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes pulseBorder {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.4); }
-            50% { box-shadow: 0 0 15px 3px rgba(253, 224, 71, 0.2); }
-        }
+        .glass-panel { background: rgba(20, 5, 20, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(220, 38, 38, 0.3); transition: all 0.3s ease; }
+        .glass-panel:hover { border-color: var(--accent-gold); box-shadow: 0 0 25px rgba(220, 38, 38, 0.3); }
+        .glow-text { text-shadow: 0 0 10px var(--accent-red), 0 0 20px var(--accent-magenta), 0 0 40px rgba(220, 38, 38, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px var(--accent-gold), 0 0 20px rgba(212, 175, 55, 0.5); }
+        .mystic-orb { background: radial-gradient(circle at 30% 30%, var(--accent-red), #450a0a); box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(168, 85, 247, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.2); border: 2px solid var(--accent-gold); transition: all 0.4s ease; }
+        .mystic-orb:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 35px rgba(253, 224, 71, 0.5), 0 0 50px rgba(168, 85, 247, 0.4); border-color: var(--text-light); }
+        .quiz-btn { background: linear-gradient(45deg, #450a0a, #7f1d1d, #450a0a); background-size: 200% 200%; animation: gradientShift 3s ease infinite, pulseBorder 2s infinite; border: 2px solid var(--text-light); }
+        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @keyframes pulseBorder { 0%, 100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.4); } 50% { box-shadow: 0 0 15px 3px rgba(253, 224, 71, 0.2); } }
 
         /* Accordion */
         .accordion-content { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.4s ease-out; }
@@ -239,15 +118,11 @@
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: sweepIn 0.4s ease-out; }
-        @keyframes sweepIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes sweepIn { from { opacity: 0; transform: translateY(-10px); } to { transform: translateY(0); } }
 
         /* Profile Glow */
         .profile-glow { position: relative; }
-        .profile-glow::before {
-            content: ''; position: absolute; inset: -4px;
-            background: linear-gradient(45deg, var(--accent-red), var(--accent-magenta), var(--accent-gold), var(--accent-red));
-            background-size: 400% 400%; border-radius: 50%; animation: borderGlow 4s ease infinite; z-index: -1; filter: blur(8px);
-        }
+        .profile-glow::before { content: ''; position: absolute; inset: -4px; background: linear-gradient(45deg, var(--accent-red), var(--accent-magenta), var(--accent-gold), var(--accent-red)); background-size: 400% 400%; border-radius: 50%; animation: borderGlow 4s ease infinite; z-index: -1; filter: blur(8px); }
         @keyframes borderGlow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
         /* Scrollbar */
@@ -263,11 +138,7 @@
 
         /* Link Card Shine */
         .link-card { position: relative; overflow: hidden; }
-        .link-card::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.5s ease;
-        }
+        .link-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent); transition: left 0.5s ease; }
         .link-card:hover::before { left: 100%; }
 
         /* Main */
@@ -285,9 +156,7 @@
             transition: all 0.3s ease;
         }
         
-        #counter-value {
-            animation: pulseCounter 2s infinite;
-        }
+        #counter-value { animation: pulseCounter 2s infinite; }
         
         @keyframes pulseCounter {
             0%, 100% { opacity: 1; text-shadow: 0 0 5px rgba(253, 224, 71, 0.5); }
@@ -299,14 +168,12 @@
 <body>
 
     <div class="life-pulse"></div>
-    
     <div class="magic-circles">
         <div class="magic-circle"></div>
         <div class="magic-circle"></div>
         <div class="magic-circle"></div>
         <div class="magic-circle"></div>
     </div>
-
     <div class="floating-roses" id="roses"></div>
     <div class="petals" id="petals"></div>
     <div class="mystic-sparks" id="sparks"></div>
@@ -322,7 +189,6 @@
                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                     </div>
                 </div>
-
                 <div class="absolute -bottom-2 -right-2 bg-gradient-to-br from-red-950 to-black p-3 rounded-full border-2 border-amber-600 shadow-lg shadow-red-900/50">
                     <svg width="28" height="28" viewBox="0 0 100 100" fill="#d4af37">
                         <path d="M50 10 C 48 10 46 12 46 14 L 46 65 C 30 55 20 40 20 25 C 20 20 15 20 15 25 C 15 50 35 70 46 75 L 46 90 C 46 95 54 95 54 90 L 54 75 C 65 70 85 50 85 25 C 85 20 80 20 80 25 C 80 40 70 55 54 65 L 54 14 C 54 12 52 10 50 10 Z M 35 25 L 35 35 L 65 35 L 65 25 M 50 10 L 50 35" stroke="#d4af37" stroke-width="2" />
@@ -621,11 +487,11 @@
 
     <script>
         // ===========================================
-        // CONFIGURAÇÃO SUPABASE
+        // CONFIGURAÇÃO SUPABASE - CHAVES NOVAS
         // ===========================================
-        // Credenciais do seu projeto Supabase
-        const SUPABASE_URL = 'https://qvbjwzszdijhydgcqvyu.supabase.co';
-        const SUPABASE_ANON_KEY = 'dUeb2l0Tmk79e23194EL9Cn3MISPDQ9wpxQ0JAmNLo183U9Z2cK8Jh66v8rTedPhqbZJjezKULh1sUblUMuMjA==';
+        const SUPABASE_URL = 'https://nqkdialqzrpmrudkmqbl.supabase.co';
+        // A CHAVE ANON É LONGA E DEVE SER MANTIDA ASSIM
+        const SUPABASE_ANON_KEY = 'sb_publishable_ftbTQgOcANe0UXLg5iLocg_EJWWsiHD -vM5Zrg1tHUNJy/0DpCecOlBpJcntarWwRJnsG6/VNO2yY74gmx6ALfYP574KGPh8rZjhTQmD0FwABlEFiQ8yOg==';
 
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -638,6 +504,7 @@
          */
         async function getAndIncrementViews() {
             try {
+                // Tenta buscar o registro (e falhará com PGRST116 se não existir)
                 let { data: current, error: fetchError } = await supabase
                     .from(TABLE_NAME)
                     .select('count')
@@ -646,7 +513,7 @@
                 
                 let newCount;
                 
-                // Se o slug não existe (PGRST116), insere com count = 1
+                // 1. O SLUG NÃO EXISTE: INSERIR
                 if (fetchError && fetchError.code === 'PGRST116') {
                     newCount = 1;
                     const { error: insertError } = await supabase
@@ -654,13 +521,13 @@
                         .insert([{ slug: PAGE_SLUG, count: newCount }]);
 
                     if (insertError) {
-                        console.error('Erro ao inserir novo contador. (Verifique RLS):', insertError);
+                        console.error('Erro de Inserção (Verifique RLS/Schema):', insertError);
                         document.getElementById('counter-value').textContent = 'Error';
                         return;
                     }
 
+                // 2. O SLUG EXISTE: ATUALIZAR
                 } else if (current) {
-                    // Se o slug existe, incrementa
                     newCount = current.count + 1;
                     const { error: updateError } = await supabase
                         .from(TABLE_NAME)
@@ -668,12 +535,13 @@
                         .eq('slug', PAGE_SLUG);
                     
                     if (updateError) {
-                         console.error('Erro ao atualizar contador. (Verifique RLS):', updateError);
+                         console.error('Erro de Atualização (Verifique RLS):', updateError);
                         newCount = current.count; 
                     }
                     
+                // 3. OUTRO ERRO (Geralmente RLS)
                 } else if (fetchError) {
-                    console.error('Erro de busca:', fetchError);
+                    console.error('Erro de Busca RLS:', fetchError);
                     document.getElementById('counter-value').textContent = 'Error';
                     return;
                 }
@@ -681,7 +549,7 @@
                 document.getElementById('counter-value').textContent = newCount.toLocaleString('pt-BR');
 
             } catch (e) {
-                console.error('Erro de conexão/Supabase:', e);
+                console.error('Erro de conexão/Supabase (Catch):', e);
                 document.getElementById('counter-value').textContent = 'Offline';
             }
         }
