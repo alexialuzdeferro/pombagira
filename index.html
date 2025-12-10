@@ -76,8 +76,6 @@
         }
 
         /* ============ EFEITOS MÍSTICOS ============ */
-
-        /* Life Pulse */
         .life-pulse {
             position: fixed;
             top: 50%;
@@ -96,7 +94,6 @@
             50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
         }
 
-        /* Magic Circles */
         .magic-circles {
             position: fixed;
             top: 50%;
@@ -116,39 +113,19 @@
         }
 
         .magic-circle:nth-child(1) {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-color: var(--accent-magenta);
-            animation: rotateCircle 30s linear infinite;
+            width: 100%; height: 100%; top: 0; left: 0; border-color: var(--accent-magenta); animation: rotateCircle 30s linear infinite;
         }
 
         .magic-circle:nth-child(2) {
-            width: 80%;
-            height: 80%;
-            top: 10%;
-            left: 10%;
-            border-color: var(--accent-red);
-            animation: rotateCircle 25s linear infinite reverse;
+            width: 80%; height: 80%; top: 10%; left: 10%; border-color: var(--accent-red); animation: rotateCircle 25s linear infinite reverse;
         }
 
         .magic-circle:nth-child(3) {
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            border-color: var(--accent-gold);
-            animation: rotateCircle 20s linear infinite;
+            width: 60%; height: 60%; top: 20%; left: 20%; border-color: var(--accent-gold); animation: rotateCircle 20s linear infinite;
         }
 
         .magic-circle:nth-child(4) {
-            width: 40%;
-            height: 40%;
-            top: 30%;
-            left: 30%;
-            border-color: #ff69b4;
-            animation: rotateCircle 15s linear infinite reverse;
+            width: 40%; height: 40%; top: 30%; left: 30%; border-color: #ff69b4; animation: rotateCircle 15s linear infinite reverse;
         }
 
         @keyframes rotateCircle {
@@ -158,21 +135,11 @@
 
         /* Floating Roses */
         .floating-roses {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden;
         }
 
         .rose {
-            position: absolute;
-            font-size: 20px;
-            opacity: 0;
-            animation: floatRose 18s ease-in-out infinite;
+            position: absolute; font-size: 20px; opacity: 0; animation: floatRose 18s ease-in-out infinite;
         }
 
         @keyframes floatRose {
@@ -184,24 +151,11 @@
 
         /* Petals */
         .petals {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; overflow: hidden;
         }
 
         .petal {
-            position: absolute;
-            width: 12px;
-            height: 16px;
-            background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff6b6b 100%);
-            border-radius: 50% 0 50% 50%;
-            opacity: 0;
-            animation: fallPetal 15s ease-in-out infinite;
+            position: absolute; width: 12px; height: 16px; background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff6b6b 100%); border-radius: 50% 0 50% 50%; opacity: 0; animation: fallPetal 15s ease-in-out infinite;
         }
 
         @keyframes fallPetal {
@@ -213,21 +167,11 @@
 
         /* Mystic Sparks */
         .mystic-sparks {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 3;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3;
         }
 
         .spark {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            animation: sparkle 3s ease-in-out infinite;
+            position: absolute; width: 3px; height: 3px; border-radius: 50%; animation: sparkle 3s ease-in-out infinite;
         }
 
         .spark.red { background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red); }
@@ -242,15 +186,13 @@
         /* ============ COMPONENTES ============ */
         .glass-panel {
             background: rgba(20, 5, 20, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(220, 38, 38, 0.3);
             transition: all 0.3s ease;
         }
 
         .glass-panel:hover {
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 25px rgba(220, 38, 38, 0.3);
+            border-color: var(--accent-gold); box-shadow: 0 0 25px rgba(220, 38, 38, 0.3);
         }
 
         .glow-text {
@@ -261,7 +203,6 @@
             text-shadow: 0 0 10px var(--accent-gold), 0 0 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* Mystic Orbs */
         .mystic-orb {
             background: radial-gradient(circle at 30% 30%, var(--accent-red), #450a0a);
             box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(168, 85, 247, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.2);
@@ -275,7 +216,6 @@
             border-color: var(--text-light);
         }
 
-        /* Quiz Button */
         .quiz-btn {
             background: linear-gradient(45deg, #450a0a, #7f1d1d, #450a0a);
             background-size: 200% 200%;
@@ -294,56 +234,21 @@
         }
 
         /* Accordion */
-        .accordion-content {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
-        }
-
-        .accordion-content.active {
-            opacity: 1;
-        }
-
-        details > summary {
-            list-style: none;
-            cursor: pointer;
-        }
-
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details[open] summary ~ * {
-            animation: sweepIn 0.4s ease-out;
-        }
-
-        @keyframes sweepIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .accordion-content { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.4s ease-out; }
+        .accordion-content.active { opacity: 1; }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweepIn 0.4s ease-out; }
+        @keyframes sweepIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Profile Glow */
-        .profile-glow {
-            position: relative;
-        }
-
+        .profile-glow { position: relative; }
         .profile-glow::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
+            content: ''; position: absolute; inset: -4px;
             background: linear-gradient(45deg, var(--accent-red), var(--accent-magenta), var(--accent-gold), var(--accent-red));
-            background-size: 400% 400%;
-            border-radius: 50%;
-            animation: borderGlow 4s ease infinite;
-            z-index: -1;
-            filter: blur(8px);
+            background-size: 400% 400%; border-radius: 50%; animation: borderGlow 4s ease infinite; z-index: -1; filter: blur(8px);
         }
-
-        @keyframes borderGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
+        @keyframes borderGlow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -352,68 +257,34 @@
 
         /* Animations */
         .animate-float { animation: float 6s ease-in-out infinite; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-pulse-slow { animation: pulseSlow 4s ease-in-out infinite; }
-        @keyframes pulseSlow {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
-        }
+        @keyframes pulseSlow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
 
         /* Link Card Shine */
-        .link-card {
-            position: relative;
-            overflow: hidden;
-        }
-
+        .link-card { position: relative; overflow: hidden; }
         .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
             transition: left 0.5s ease;
         }
-
-        .link-card:hover::before {
-            left: 100%;
-        }
+        .link-card:hover::before { left: 100%; }
 
         /* Main */
-        main {
-            position: relative;
-            z-index: 10;
-        }
+        main { position: relative; z-index: 10; }
         
-        /* NOVO ESTILO DO CONTADOR - Mantendo transparência e posição */
+        /* ESTILO DO CONTADOR */
         #visit-counter {
-            /* Mantém a posição fixed */
-            position: fixed;
-            bottom: 8px; /* bottom-2 */
-            right: 8px;  /* right-2 */
-            
-            /* Mantém a estética */
-            color: #d4af37; /* text-amber-500/60 */
-            opacity: 0.6;
-            font-size: 10px;
-            font-family: 'monospace'; /* font-mono */
-            z-index: 50;
-            pointer-events: none;
-            background-color: rgba(0, 0, 0, 0.5); /* bg-black/50 */
-            padding: 2px 8px; /* px-2 py-1 */
-            border-radius: 4px; /* rounded */
-            
-            /* Adiciona um pequeno efeito visual (opcional) */
+            position: fixed; bottom: 8px; right: 8px;  
+            color: #d4af37; opacity: 0.6;
+            font-size: 10px; font-family: 'monospace'; 
+            z-index: 50; pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 2px 8px; border-radius: 4px; 
             box-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
             transition: all 0.3s ease;
         }
         
-        /* Animação de pulso para o número do contador */
         #counter-value {
             animation: pulseCounter 2s infinite;
         }
@@ -481,9 +352,7 @@
                         <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
-                    Pontos<br>Cantados
-                </span>
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Pontos<br>Cantados</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
@@ -492,9 +361,7 @@
                         <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">
-                    Grimório<br>Sagrado
-                </span>
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">Grimório<br>Sagrado</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/Pombagiras/" target="_blank" class="flex flex-col items-center group -mt-2 md:-mt-3">
@@ -504,9 +371,7 @@
                         <path d="M12 22c4.97 0 9-4.03 9-9h-2c0 3.87-3.13 7-7 7s-7-3.13-7-7H3c0 4.97 4.03 9 9 9z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">
-                    O Portal<br>Real
-                </span>
+                <span class="font-cinzel font-bold text-[10px] md:text-xs uppercase tracking-widest text-center text-red-400 group-hover:text-amber-400 transition gold-glow">O Portal<br>Real</span>
             </a>
 
             <a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank" class="flex flex-col items-center group">
@@ -515,9 +380,7 @@
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM4 0h16v2H4zm0 22h16v2H4zm8-10a2.5 2.5 0 000-5 2.5 2.5 0 000 5zm0 1c-1.83 0-5.5.92-5.5 2.75V17h11v-1.25c0-1.83-3.67-2.75-5.5-2.75z"/>
                     </svg>
                 </div>
-                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">
-                    Cartão<br>de Visitas
-                </span>
+                <span class="font-cinzel font-bold text-[9px] md:text-[11px] uppercase tracking-wider text-center text-amber-200 group-hover:text-amber-400 transition">Cartão<br>de Visitas</span>
             </a>
         </section>
 
@@ -525,12 +388,8 @@
             <a href="https://alexialuzdeferro.github.io/pombagira-revelada/" target="_blank" class="block rounded-xl overflow-hidden transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 quiz-btn link-card group">
                 <div class="px-5 py-4 md:px-6 md:py-5 flex items-center justify-between relative z-10">
                     <div class="flex flex-col">
-                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg tracking-wide">
-                            DESCUBRA SUA POMBAGIRA
-                        </span>
-                        <span class="font-garamond text-sm text-amber-300/80 italic">
-                            Faça o teste místico agora
-                        </span>
+                        <span class="font-cinzel font-bold text-amber-100 text-base md:text-lg tracking-wide">DESCUBRA SUA POMBAGIRA</span>
+                        <span class="font-garamond text-sm text-amber-300/80 italic">Faça o teste místico agora</span>
                     </div>
                     <span class="text-2xl md:text-3xl animate-bounce">🔮</span>
                 </div>
@@ -551,158 +410,87 @@
                         
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Maria Padilha</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Comando & Realeza</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Padilha</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Comando & Realeza</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Rainha das encruzilhadas, senhora do fogo e da sedução. Trabalha abrindo caminhos amorosos e devolvendo a autoestima. Não aceita mentiras e cobra respeito.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Rainha das encruzilhadas, senhora do fogo e da sedução. Trabalha abrindo caminhos amorosos e devolvendo a autoestima. Não aceita mentiras e cobra respeito.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Maria Mulambo</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Cura & Humildade</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Mulambo</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Cura & Humildade</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                A grande feiticeira que transforma lixo em ouro. Trabalha curando dores emocionais profundas e amparando os desvalidos.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">A grande feiticeira que transforma lixo em ouro. Trabalha curando dores emocionais profundas e amparando os desvalidos.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Maria Quitéria</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Guerra & Proteção</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Quitéria</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Guerra & Proteção</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Guerreira nata, traz a faca nos dentes. Protege contra demandas espirituais pesadas e injustiças.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Guerreira nata, traz a faca nos dentes. Protege contra demandas espirituais pesadas e injustiças.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Rosa Caveira</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Justiça & Morte</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Rosa Caveira</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Justiça & Morte</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Senhora das almas e dos cemitérios. Trabalha com a justiça divina e o encaminhamento de espíritos.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Senhora das almas e dos cemitérios. Trabalha com a justiça divina e o encaminhamento de espíritos.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Dama da Noite</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Mistério & Oculto</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Dama da Noite</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Mistério & Oculto</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Guardiana dos segredos da madrugada. Revela o que está oculto e trabalha com alta magia.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Guardiana dos segredos da madrugada. Revela o que está oculto e trabalha com alta magia.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Sete Saias</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Alegria & Intensidade</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Sete Saias</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Alegria & Intensidade</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Traz o movimento, a dança e a alegria de viver. Trabalha em sete caminhos diferentes.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Traz o movimento, a dança e a alegria de viver. Trabalha em sete caminhos diferentes.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Pombagira Cigana</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Liberdade & Prosperidade</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira Cigana</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Liberdade & Prosperidade</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Dona dos caminhos abertos, do ouro e da vidência. Traz liberdade e prosperidade.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Dona dos caminhos abertos, do ouro e da vidência. Traz liberdade e prosperidade.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Maria Navalha</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Malandragem & Rua</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Navalha</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Malandragem & Rua</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Protetora de quem anda na noite. Com sua navalha, corta a falsidade e o perigo.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Protetora de quem anda na noite. Com sua navalha, corta a falsidade e o perigo.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Pombagira da Praia</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Emoção & Limpeza</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira da Praia</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Emoção & Limpeza</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Trabalha na calunga grande (o mar). Lava as dores da alma e traz renovação emocional.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Trabalha na calunga grande (o mar). Lava as dores da alma e traz renovação emocional.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Maria Farrapo</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Sanidade & Caos</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Maria Farrapo</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Sanidade & Caos</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Atua no mental, organizando o caos interior. Ajuda a recuperar a sanidade.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Atua no mental, organizando o caos interior. Ajuda a recuperar a sanidade.</p>
                         </details>
-
                         <details class="group p-3 border-b border-red-900/20">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Pombagira Menina</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Renovação & Inocência</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira Menina</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Renovação & Inocência</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Traz a leveza e a renovação. Possui força ancestral e desfaz feitiços rapidamente.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Traz a leveza e a renovação. Possui força ancestral e desfaz feitiços rapidamente.</p>
                         </details>
-
                         <details class="group p-3">
                             <summary class="flex justify-between items-center font-cinzel font-bold text-red-400 cursor-pointer">
-                                <span class="flex flex-col md:flex-row md:items-center gap-1">
-                                    <span>Pombagira da Figueira</span>
-                                    <span class="text-amber-200/60 text-xs font-garamond font-normal italic">Raiz & Ancestralidade</span>
-                                </span>
+                                <span class="flex flex-col md:flex-row md:items-center gap-1"><span>Pombagira da Figueira</span><span class="text-amber-200/60 text-xs font-garamond font-normal italic">Raiz & Ancestralidade</span></span>
                                 <span class="transform transition-transform group-open:rotate-180 text-xs">▼</span>
                             </summary>
-                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">
-                                Ligada à terra e às raízes profundas. Traz firmeza, fertilidade e conexão ancestral.
-                            </p>
+                            <p class="font-garamond text-amber-100/80 text-sm mt-3 pl-3 leading-relaxed border-l-2 border-red-600 italic">Ligada à terra e às raízes profundas. Traz firmeza, fertilidade e conexão ancestral.</p>
                         </details>
 
                     </div>
@@ -758,21 +546,15 @@
                 <p class="text-center text-amber-100 text-sm font-cinzel font-bold mb-3 uppercase tracking-wider">Acessar Canais Agora</p>
                 <div class="grid grid-cols-3 gap-3">
                     <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-green-900/50 flex items-center justify-center border border-green-700 group-hover:scale-110 transition">
-                            <span class="text-green-400 text-lg">💬</span>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-green-900/50 flex items-center justify-center border border-green-700 group-hover:scale-110 transition"><span class="text-green-400 text-lg">💬</span></div>
                         <span class="text-xs text-amber-200">WhatsApp</span>
                     </a>
                     <a href="https://t.me/pomba_giras" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center border border-blue-700 group-hover:scale-110 transition">
-                            <span class="text-blue-400 text-lg">✈️</span>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center border border-blue-700 group-hover:scale-110 transition"><span class="text-blue-400 text-lg">✈️</span></div>
                         <span class="text-xs text-amber-200">Telegram</span>
                     </a>
                     <a href="https://discord.gg/gWZP8R7Dqu" target="_blank" class="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-white/10 transition group">
-                        <div class="w-10 h-10 rounded-full bg-indigo-900/50 flex items-center justify-center border border-indigo-700 group-hover:scale-110 transition">
-                            <span class="text-indigo-400 text-lg">🎮</span>
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-indigo-900/50 flex items-center justify-center border border-indigo-700 group-hover:scale-110 transition"><span class="text-indigo-400 text-lg">🎮</span></div>
                         <span class="text-xs text-amber-200">Discord</span>
                     </a>
                 </div>
@@ -786,44 +568,21 @@
                         </svg>
                         <span class="font-cinzel font-bold text-amber-100 text-lg md:text-xl">Canal YouTube</span>
                     </span>
-                    <span class="bg-red-600 text-white text-xs px-2 md:px-3 py-1 rounded-full font-cinzel uppercase tracking-wider">
-                        Inscreva-se
-                    </span>
+                    <span class="bg-red-600 text-white text-xs px-2 md:px-3 py-1 rounded-full font-cinzel uppercase tracking-wider">Inscreva-se</span>
                 </div>
             </a>
 
             <div class="grid grid-cols-2 gap-3">
-                <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card">
-                    <div class="text-xl md:text-2xl text-pink-500">📷</div>
-                    <span class="font-cinzel text-amber-100 font-semibold text-sm">Instagram</span>
-                </a>
-                <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card">
-                    <div class="text-xl md:text-2xl">🎵</div>
-                    <span class="font-cinzel text-amber-100 font-semibold text-sm">TikTok</span>
-                </a>
-                <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card">
-                    <div class="text-xl md:text-2xl text-white">@</div>
-                    <span class="font-cinzel text-amber-100 font-semibold text-sm">Threads</span>
-                </a>
-                <a href="https://br.pinterest.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card">
-                    <div class="text-xl md:text-2xl text-red-600">📌</div>
-                    <span class="font-cinzel text-amber-100 font-semibold text-sm">Pinterest</span>
-                </a>
+                <a href="https://www.instagram.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-pink-500">📷</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Instagram</span></a>
+                <a href="https://www.tiktok.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl">🎵</div><span class="font-cinzel text-amber-100 font-semibold text-sm">TikTok</span></a>
+                <a href="https://www.threads.com/@almasdepombagira" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-white">@</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Threads</span></a>
+                <a href="https://br.pinterest.com/almasdepombagira/" target="_blank" class="glass-panel p-3 md:p-4 rounded-xl flex items-center gap-3 hover:bg-white/5 transition link-card"><div class="text-xl md:text-2xl text-red-600">📌</div><span class="font-cinzel text-amber-100 font-semibold text-sm">Pinterest</span></a>
             </div>
 
             <div class="grid grid-cols-3 gap-2">
-                <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center">
-                    <span class="text-xl md:text-2xl text-orange-500">🟧</span>
-                    <span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Alexia</span>
-                </a>
-                <a href="https://www.tiktok.com/@alexiarosadefogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center">
-                    <span class="text-xl md:text-2xl">🎵</span>
-                    <span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">TikTok<br>Alexia</span>
-                </a>
-                <a href="https://www.kwai.com/@AlmasdePombagira" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center">
-                    <span class="text-xl md:text-2xl text-orange-500">🟧</span>
-                    <span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Almas</span>
-                </a>
+                <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl text-orange-500">🟧</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Alexia</span></a>
+                <a href="https://www.tiktok.com/@alexiarosadefogo" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl">🎵</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">TikTok<br>Alexia</span></a>
+                <a href="https://www.kwai.com/@AlmasdePombagira" target="_blank" class="glass-panel p-2 md:p-3 rounded-xl flex flex-col items-center justify-center gap-1 hover:bg-white/5 transition link-card text-center"><span class="text-xl md:text-2xl text-orange-500">🟧</span><span class="text-amber-200 font-bold text-[10px] md:text-xs leading-tight">Kwai<br>Almas</span></a>
             </div>
 
             <a href="https://www.tiktok.com/@espelhosdepombagira" target="_blank" class="block glass-panel rounded-xl border border-amber-600/50 p-4 link-card bg-gradient-to-r from-black/50 to-red-950/30 hover:border-amber-500 transition">
@@ -858,12 +617,13 @@
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
 
     <script>
         // ===========================================
         // CONFIGURAÇÃO SUPABASE
         // ===========================================
+        // Credenciais do seu projeto Supabase
         const SUPABASE_URL = 'https://qvbjwzszdijhydgcqvyu.supabase.co';
         const SUPABASE_ANON_KEY = 'dUeb2l0Tmk79e23194EL9Cn3MISPDQ9wpxQ0JAmNLo183U9Z2cK8Jh66v8rTedPhqbZJjezKULh1sUblUMuMjA==';
 
@@ -871,15 +631,13 @@
 
         // SLUG ÚNICO PARA ESTA PÁGINA: "pombagira-page"
         const PAGE_SLUG = 'pombagira-page'; 
-        const TABLE_NAME = 'views'; // Nome da sua tabela de contagem
+        const TABLE_NAME = 'views'; 
 
         /**
-         * Busca o contador atual e o incrementa em 1.
-         * Insere um novo registro se o slug não existir.
+         * Busca o contador atual, incrementa e atualiza o display.
          */
         async function getAndIncrementViews() {
             try {
-                // 1. Tenta buscar o registro para o SLUG atual
                 let { data: current, error: fetchError } = await supabase
                     .from(TABLE_NAME)
                     .select('count')
@@ -888,24 +646,21 @@
                 
                 let newCount;
                 
+                // Se o slug não existe (PGRST116), insere com count = 1
                 if (fetchError && fetchError.code === 'PGRST116') {
-                    // 2a. SLUG não encontrado (primeiro acesso), INSIRA o registro
                     newCount = 1;
                     const { error: insertError } = await supabase
                         .from(TABLE_NAME)
-                        .insert([
-                            { slug: PAGE_SLUG, count: newCount }
-                        ]);
+                        .insert([{ slug: PAGE_SLUG, count: newCount }]);
 
                     if (insertError) {
-                        console.error('Erro ao inserir novo contador:', insertError);
-                        // Tenta mostrar 1 ou uma mensagem de erro se a inserção falhar
+                        console.error('Erro ao inserir novo contador. (Verifique RLS):', insertError);
                         document.getElementById('counter-value').textContent = 'Error';
                         return;
                     }
 
                 } else if (current) {
-                    // 2b. SLUG encontrado, ATUALIZA o contador
+                    // Se o slug existe, incrementa
                     newCount = current.count + 1;
                     const { error: updateError } = await supabase
                         .from(TABLE_NAME)
@@ -913,35 +668,31 @@
                         .eq('slug', PAGE_SLUG);
                     
                     if (updateError) {
-                        console.error('Erro ao atualizar contador:', updateError);
-                        newCount = current.count; // Mostra o valor antigo em caso de erro na atualização
+                         console.error('Erro ao atualizar contador. (Verifique RLS):', updateError);
+                        newCount = current.count; 
                     }
                     
                 } else if (fetchError) {
-                    // Trata outros erros de busca
-                    console.error('Erro geral na busca do contador:', fetchError);
+                    console.error('Erro de busca:', fetchError);
                     document.getElementById('counter-value').textContent = 'Error';
                     return;
                 }
 
-                // 3. Atualiza o display no HTML com formatação PT-BR
                 document.getElementById('counter-value').textContent = newCount.toLocaleString('pt-BR');
 
             } catch (e) {
-                console.error('Erro de rede ou Supabase:', e);
+                console.error('Erro de conexão/Supabase:', e);
                 document.getElementById('counter-value').textContent = 'Offline';
             }
         }
 
         // ===========================================
-        // FUNÇÕES EXISTENTES
+        // FUNÇÕES EXISTENTES (Efeitos Visuais)
         // ===========================================
         
-        // Criar Rosas Flutuantes
         function createRoses() {
             const container = document.getElementById('roses');
             const roseEmojis = ['🌹', '🥀', '💮', '🏵️'];
-            
             for (let i = 0; i < 6; i++) {
                 const rose = document.createElement('div');
                 rose.className = 'rose';
@@ -953,10 +704,8 @@
             }
         }
 
-        // Criar Pétalas
         function createPetals() {
             const container = document.getElementById('petals');
-            
             for (let i = 0; i < 15; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'petal';
@@ -968,11 +717,9 @@
             }
         }
 
-        // Criar Faíscas
         function createSparks() {
             const container = document.getElementById('sparks');
             const colors = ['red', 'magenta', 'gold'];
-            
             for (let i = 0; i < 25; i++) {
                 const spark = document.createElement('div');
                 spark.className = 'spark ' + colors[Math.floor(Math.random() * colors.length)];
@@ -984,13 +731,11 @@
             }
         }
 
-        // Accordion Toggle
         function toggleAccordion(id) {
             const content = document.getElementById(`content-${id}`);
             const arrow = document.getElementById(`arrow-${id}`);
             const isOpening = !content.style.maxHeight || content.style.maxHeight === '0px';
 
-            // Fechar todos
             document.querySelectorAll('.accordion-content').forEach(el => {
                 el.style.maxHeight = null;
                 el.classList.remove('active');
@@ -999,7 +744,6 @@
                 el.style.transform = 'rotate(0deg)';
             });
 
-            // Abrir selecionado
             if (isOpening) {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 content.classList.add('active');
@@ -1007,7 +751,6 @@
             }
         }
 
-        // Recalcular accordion quando details abre
         document.querySelectorAll('#pombagiras-list details').forEach(detail => {
             detail.addEventListener('toggle', () => {
                 const parentContent = document.getElementById('content-pombagiras');
@@ -1019,14 +762,12 @@
             });
         });
 
-        // Chamada de Inicialização
+        // Chamada de Inicialização no DOMContentLoaded
         document.addEventListener('DOMContentLoaded', () => {
             createRoses();
             createPetals();
             createSparks();
-            
-            // CHAMA A FUNÇÃO REAL DO SUPABASE
-            getAndIncrementViews();
+            getAndIncrementViews(); // Inicia o contador Supabase
         });
     </script>
 </body>
